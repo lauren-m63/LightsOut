@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">LightsOut</string>
     <string name="lights_lauren">lights lauren!</string>
+    <string name="score_0">Score: 0</string>
 </resources>
