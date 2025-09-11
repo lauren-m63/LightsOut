@@ -55,26 +55,29 @@
         android:id="@+id/ScoreText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="59dp"
         android:layout_marginTop="30dp"
         android:text="@string/score_0"
-        app:layout_constraintTop_toBottomOf="@+id/light_grid"
-        tools:layout_editor_absoluteX="59dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/light_grid" />
 
     <Button
         android:id="@+id/resetButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="52dp"
         android:layout_marginTop="30dp"
         android:text="@string/reset"
-        app:layout_constraintTop_toBottomOf="@+id/ScoreText"
-        tools:layout_editor_absoluteX="52dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ScoreText" />
 
     <Button
         android:id="@+id/randomButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
         android:text="@string/randomize"
         app:layout_constraintBottom_toBottomOf="@+id/resetButton"
-        tools:layout_editor_absoluteX="195dp" />
+        app:layout_constraintStart_toEndOf="@+id/resetButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

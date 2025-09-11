@@ -43,6 +43,42 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
+    View.OnClickListener randomButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v1) {
+            Button current = (Button) v1;
+
+            current.findViewById(R.id.resetButton);
+            randomize();
+            recolor();
+            lightOn();
+        }
+
+    };
+
+    View.OnClickListener resetButtonListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v2) {
+
+            for (int i = 0; i < grid.getChildCount(); i++) {
+                Button gridButton = (Button) grid.getChildAt(i);
+
+                // Find the button's row and col
+                int row = i / GRID_SIZE;
+                int col = i % GRID_SIZE;
+
+                if (cellState[row][col] == true) {
+                    gridButton.setBackgroundColor(getColor(R.color.blue_500));
+                } else {
+                    gridButton.setBackgroundColor(getColor(R.color.blue_500));
+                }
+            }
+
+        }
+
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +98,12 @@ public class MainActivity extends AppCompatActivity {
             Button currButton = (Button) grid.getChildAt(i);
             currButton.setOnClickListener(buttonListener);
         }
+
+        resetButton = findViewById(R.id.resetButton); //has to be after the onCreate
+        resetButton.setOnClickListener(resetButtonListener); //tie button listener to button
+
+        randomButton = findViewById(R.id.randomButton); //has to be after the onCreate
+        randomButton.setOnClickListener(randomButtonListener); //tie button listener to button
     }
 
     public void recolor(){
